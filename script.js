@@ -339,7 +339,9 @@ function setupChatInterface() {
     
     // Redirect after a short delay
     setTimeout(() => {
-      window.location.href = 'TalentForge/index.html';
+      const button = event.target;
+      const href = button.closest('a').getAttribute('href');
+      window.location.href = href;
     }, 500);
   };
   
@@ -397,7 +399,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         this.classList.remove('loading');
         // Handle navigation or other actions here
-        window.location.href = 'chat.html';
+        const href = this.closest('a').getAttribute('href');
+        window.location.href = href;
       }, 1000);
     });
   });
